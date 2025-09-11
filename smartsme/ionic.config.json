@@ -1,0 +1,7 @@
+{
+  "name": "smartsme",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
