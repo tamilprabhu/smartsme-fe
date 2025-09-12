@@ -7,7 +7,6 @@ ionic start myApp blank
 ionic start myApp blank --type=angular
 cd myApp
 code .
-# For new app #
 
 _**ionic serve**_
 
