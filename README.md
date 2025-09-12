@@ -2,11 +2,12 @@
 
 _**npm install -g @ionic/cli**_
 
-# For new app #
-ionic start myApp blank
-ionic start myApp blank --type=angular
-cd myApp
-code .
+**For new app**
+
+    ionic start myApp blank
+    ionic start myApp blank --type=angular
+    cd myApp
+    code .
 
 _**ionic serve**_
 
