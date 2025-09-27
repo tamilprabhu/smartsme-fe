@@ -10,12 +10,14 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">test{{ folder }}</ion-title>
+      <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
+  <ng-container [ngSwitch]="folder">
+    <app-employee *ngSwitchCase="'Employees'"></app-employee>
+    <!-- Add more cases as needed -->
+  </ng-container>
+  <div id="container" *ngIf="folder !== 'Employees'">
     <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
 </ion-content>

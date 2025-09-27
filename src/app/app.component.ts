@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { LoginService } from './services/login.service';
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
   standalone: false,
+  providers: [LoginService]
 })
 export class AppComponent {
   public appPages = [
@@ -23,5 +25,16 @@ export class AppComponent {
     { title: 'Invoice View', url: '/folder/Invoice View', icon: 'warning' },
   ];
   public labels = ['Add Employee', 'Add Product'];
-  constructor() {}
+  isLoggedIn:boolean=localStorage.getItem('isLoggedIn') === 'true';
+  constructor(public loginService: LoginService) {}
+  
+  ngOnInit() {
+    this.loginService.isLoggedIn$.subscribe(status => {
+      this.isLoggedIn = status;
+    });
+  }
+
+  onUserLoggedIn() {
+    console.log("LOGIN EMITTED");
+  }
 }
